@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import *
 from voting_view import *
-from menu_view import *
 
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)

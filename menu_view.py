@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'voting_view.ui'
+# Form implementation generated from reading ui file 'menu_view.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,24 +17,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(760, 646)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.votebutton_john = QtWidgets.QPushButton(self.centralwidget)
-        self.votebutton_john.setEnabled(False)
-        self.votebutton_john.setGeometry(QtCore.QRect(200, 280, 93, 28))
-        self.votebutton_john.setObjectName("votebutton_john")
-        self.votebutton_jane = QtWidgets.QPushButton(self.centralwidget)
-        self.votebutton_jane.setEnabled(False)
-        self.votebutton_jane.setGeometry(QtCore.QRect(410, 290, 93, 28))
-        self.votebutton_jane.setObjectName("votebutton_jane")
+        self.button_yes = QtWidgets.QPushButton(self.centralwidget)
+        self.button_yes.setGeometry(QtCore.QRect(300, 230, 93, 28))
+        self.button_yes.setObjectName("button_yes")
         self.heading = QtWidgets.QLabel(self.centralwidget)
-        self.heading.setEnabled(False)
-        self.heading.setGeometry(QtCore.QRect(280, 120, 251, 16))
+        self.heading.setGeometry(QtCore.QRect(280, 140, 251, 16))
         self.heading.setObjectName("heading")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(300, 130, 201, 16))
-        self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(320, 230, 93, 28))
-        self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 760, 26))
@@ -50,11 +38,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.votebutton_john.setText(_translate("MainWindow", "JOHN"))
-        self.votebutton_jane.setText(_translate("MainWindow", "JANE"))
-        self.heading.setText(_translate("MainWindow", "VOTE FOR SOMEONE"))
-        self.label.setText(_translate("MainWindow", "DO YOOU WANT TO VOTE?"))
-        self.pushButton.setText(_translate("MainWindow", "YES!"))
+        self.button_yes.setText(_translate("MainWindow", "YES"))
+        self.heading.setText(_translate("MainWindow", "DO YOU WANT TO VOTE?"))
 
 
 if __name__ == "__main__":
