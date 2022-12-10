@@ -5,7 +5,6 @@ import csv
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 class Controller(QMainWindow, Ui_MainWindow):
-    vote =''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
@@ -15,7 +14,14 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.vote_button_confirm.clicked.connect(lambda: self.voted_submit())
         self.end_button_again.clicked.connect(lambda: self.vote_again())
 
+        self.__vote = ''
+        self.__voterid = 0
+
     def voterid_submit(self):
+        '''
+        voterid_submit will first set the text box as empty and store the id in self.__voterid
+        the voterid has to be a 5 digit number and cannot start with 0, nor can it have a string
+        '''
         self.__voterid = self.voterid_textbox_voterid.text()
         self.voterid_textbox_voterid.setText('')
         try:
@@ -27,6 +33,8 @@ class Controller(QMainWindow, Ui_MainWindow):
         except:
             self.voterid_label_error.setText('Voter ID must be a 5 digit number,\nand cannot start with 0')
         else:
+
+            #TAKES AWAY VOTER ID GUI
             self.voterid_label_error.setText('')
             self.voterid_textbox_voterid.setHidden(True)
             self.voterid_textbox_voterid.setEnabled(False)
@@ -37,6 +45,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.voterid_label_entertext.setEnabled(False)
             self.voteid_label_topdescription.setHidden(True)
 
+            #ADDS IN VOTING GUI
             self.vote_picture_john.setHidden(False)
             self.vote_picture_john.setEnabled(True)
             self.vote_picture_jane.setHidden(False)
@@ -47,14 +56,24 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.vote_button_john.setEnabled(True)
             self.vote_label_selecttext.setHidden(False)
             self.vote_label_selecttext.setEnabled(True)
-    def voted(self, selection):
+
+
+    def voted(self, selection: str):
+        '''
+        :param selection: which candidate was selected based off the 2 selection buttons
+        Then adds in the Voting confirmation GUI
+        '''
         self.vote_button_confirm.setHidden(False)
         self.vote_button_confirm.setEnabled(True)
         self.vote_label_sure.setEnabled(True)
         self.vote_label_sure.setHidden(False)
         self.vote_label_sure.setText(f'Are you sure you want to vote for {selection}?')
-        self.vote = selection
+        self.__vote = selection
 
+    '''
+    vote_submit will first try to open the Votes file if it already exists
+    if it doesn't exist it will create is and add the tally
+    '''
     def voted_submit(self):
         do_heading = False
         try:
@@ -63,17 +82,17 @@ class Controller(QMainWindow, Ui_MainWindow):
             do_heading = True
         finally:
             with open('Votes.csv', 'a', newline='') as cfile:
-                fieldnames = ['John', 'Jane']
+                fieldnames = ['John', 'Jane', 'Voter ID']
                 writer = csv.DictWriter(cfile, fieldnames=fieldnames)
                 if do_heading == True:
                     writer.writeheader()
-                if self.vote == 'John':
-                    writer.writerow({'John': '|', 'Jane': ''})
+                if self.__vote == 'John':
+                    writer.writerow({'John': '|', 'Jane': '', 'Voter ID': self.__voterid})
                 else:
-                    writer.writerow({'John': '', 'Jane': '|'})
+                    writer.writerow({'John': '', 'Jane': '|', 'Voter ID': self.__voterid})
                 cfile.close()
 
-
+        #TAKES AWAY VOTING SCREEN GUI
         self.vote_picture_john.setHidden(True)
         self.vote_picture_john.setEnabled(False)
         self.vote_picture_jane.setHidden(True)
@@ -89,16 +108,19 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.vote_label_sure.setHidden(True)
         self.vote_label_sure.setEnabled(False)
 
+        #BRINGS IN END SCREEN GUI
         self.end_label_thanks.setHidden(False)
         self.end_label_thanks.setEnabled(True)
         self.end_button_again.setHidden(False)
         self.end_button_again.setEnabled(True)
     def vote_again(self):
+        #GETS RID OF THE END SCREEN GUI
         self.end_label_thanks.setHidden(True)
         self.end_label_thanks.setEnabled(False)
         self.end_button_again.setHidden(True)
         self.end_button_again.setEnabled(False)
 
+        #BRINGS BACK START SCREEN GUI
         self.voterid_label_error.setText('')
         self.voterid_textbox_voterid.setHidden(False)
         self.voterid_textbox_voterid.setEnabled(True)
