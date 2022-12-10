@@ -6,99 +6,289 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>646</height>
+    <width>500</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="votebutton_john">
+   <widget class="QLabel" name="voterid_label_entertext">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>340</y>
-      <width>93</width>
-      <height>28</height>
+      <x>0</x>
+      <y>120</y>
+      <width>500</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Please enter your unique Voter ID:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="voterid_textbox_voterid">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>52</x>
+      <y>171</y>
+      <width>300</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="voteid_label_topdescription">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>20</y>
+      <width>250</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>JOHN</string>
+     <string>Welcome to the Official voting program!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="votebutton_jane">
+   <widget class="QLabel" name="voterid_label_error">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>340</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>JANE</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="heading">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>290</x>
+      <x>125</x>
       <y>250</y>
-      <width>251</width>
-      <height>16</height>
+      <width>250</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="text">
-     <string>VOTE FOR SOMEONE</string>
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="voterid_button_submit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>350</x>
+      <y>170</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SUBMIT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vote_picture_john">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>120</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>guyman.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vote_picture_jane">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>girlwoman.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vote_button_john">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>100</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VOTE JOHN</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vote_button_jane">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>230</y>
+      <width>100</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VOTE JANE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vote_button_confirm">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>380</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CONFIRM</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vote_label_sure">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>350</y>
+      <width>250</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;Are you sure you want to vote ____?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vote_label_selecttext">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>75</x>
       <y>50</y>
-      <width>201</width>
-      <height>16</height>
+      <width>350</width>
+      <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>DO YOOU WANT TO VOTE?</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;PLEASE SELECT A CANDIDATE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="end_label_thanks">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>100</y>
-      <width>93</width>
-      <height>28</height>
+      <x>75</x>
+      <y>160</y>
+      <width>350</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="text">
-     <string>YES!</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;THANKS FOR VOTING!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="description">
+   <widget class="QPushButton" name="end_button_again">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>430</y>
-      <width>55</width>
-      <height>16</height>
+      <x>150</x>
+      <y>250</y>
+      <width>200</width>
+      <height>60</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>VOTE AGAIN</string>
     </property>
    </widget>
   </widget>
@@ -107,10 +297,16 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>760</width>
+     <width>500</width>
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuVote">
+    <property name="title">
+     <string>Vote</string>
+    </property>
+   </widget>
+   <addaction name="menuVote"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
